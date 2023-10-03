@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spirit/widgets/leaderboard_tile.dart';
 import 'package:spirit/widgets/match_tile.dart';
 import 'package:spirit/widgets/schedule_tile.dart';
