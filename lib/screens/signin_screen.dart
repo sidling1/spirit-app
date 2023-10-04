@@ -17,7 +17,10 @@ class _LoginScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF080808),
-      body: Column(
+      body:
+      Center(
+        child: Column(
+
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
@@ -35,95 +38,95 @@ class _LoginScreenState extends State<SignInScreen> {
               height: 32.0,
             ),
             Container(
-              width:280.0,
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: [
-                      Text(
-                        "Name",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: "PPMori",
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
-                  Container(
-                    height: 40.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.green,
-                            width: 2.0,
+                width:280.0,
+                child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: [
+                          Text(
+                            "Name",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: "PPMori",
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 16.0,
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
+                        ],
                       ),
-                      onChanged: (value) {
-                        setState(() {
-                          username = value;
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: 26.0,
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "Password",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontFamily: "PPMori",
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 16.0,
-                        ),
+                      SizedBox(
+                        height: 16.0,
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
-                  Container(
-                    height: 40.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFFCFFF69),
-                            width: 2.0,
+                      Container(
+                        height: 40.0,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.green,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                          ),
-                          onPressed: () {
+                          onChanged: (value) {
                             setState(() {
-                              isPasswordVisible = !isPasswordVisible;
+                              username = value;
                             });
                           },
                         ),
                       ),
-                      obscureText: !isPasswordVisible,
-                      onChanged: (value) {
-                        setState(() {
-                          password = value;
-                        });
-                      },
-                    ),
-                  ),
-                ]
-              )
+                      SizedBox(
+                        height: 26.0,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Password",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontFamily: "PPMori",
+                              color: Color(0xFFFFFFFF),
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 16.0,
+                      ),
+                      Container(
+                        height: 40.0,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFFCFFF69),
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(4.0),
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  isPasswordVisible = !isPasswordVisible;
+                                });
+                              },
+                            ),
+                          ),
+                          obscureText: !isPasswordVisible,
+                          onChanged: (value) {
+                            setState(() {
+                              password = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ]
+                )
             ),
 
             SizedBox(
@@ -138,6 +141,11 @@ class _LoginScreenState extends State<SignInScreen> {
                 backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFCFFF69)),
                 foregroundColor: MaterialStateProperty.all<Color>(Color(0xFF080808)),
                 fixedSize: MaterialStateProperty.all<Size>(Size(280.0,40.0)),
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
+                ),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -163,15 +171,22 @@ class _LoginScreenState extends State<SignInScreen> {
                 backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFCFFF69)),
                 foregroundColor: MaterialStateProperty.all<Color>(Color(0xFF080808)),
                 fixedSize: MaterialStateProperty.all<Size>(Size(280.0,40.0)),
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
+                ),
               ),
               child: Row(
-                  children: <Widget>[
-                    Text('Sign in as Guest')
-                  ],
+                children: <Widget>[
+                  Text('Sign in as Guest')
+                ],
               ),
             ),
           ],
         ),
+      ),
+
     );
   }
 }
