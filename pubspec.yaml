@@ -20,6 +20,7 @@ flutter:
 
   assets:
     - assets/sports/
+    - assets/
 
   fonts:
     - family: PPMori

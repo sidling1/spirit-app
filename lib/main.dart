@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spirit/screens/logo_screen.dart';
 import 'package:spirit/screens/sports_screen.dart';
+import 'package:spirit/screens/signin_screen.dart';
 
 void main() {
   runApp(const MainApp());
